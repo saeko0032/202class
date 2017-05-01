@@ -1,0 +1,64 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pkg202class;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+
+/**
+ *
+ * @author CICCC-CIRAC
+ */
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        System.out.println("Hello");
+        System.out.println("Saeko Fukui");
+        System.out.println("");
+        int a = 5;
+        int b = 10;
+        System.out.println("sum(a+b) is " + (a + b));
+        System.out.println("sub(a+b) is " + (a - b));
+        System.out.println("mul(a+b) is " + (a * b));
+        System.out.println("div(a+b) is " + (a / b));
+        System.out.println("");
+        
+        System.out.println("a's answer is " + (-5 + 8 * 6));    
+        System.out.println("b's answer is " + ((55 + 9) % 9));  
+        System.out.println("c's answer is " + (20 + -3 * 5 / 8));  
+        System.out.println("d's answer is " + (5 + 15 / 3 * 2 - 8 % 3));
+        System.out.println("");
+        
+        int firstNum = 125;
+        int secondNum = 24;
+        
+        System.out.println("firstNum + secondNum is " + (firstNum + secondNum));
+        System.out.println("firstNum - secondNum is " + (firstNum - secondNum));
+        System.out.println("firstNum * secondNum is " + (firstNum * secondNum));
+        System.out.println("firstNum / secondNum is " + (firstNum / secondNum));
+        System.out.println("firstNum % secondNum is " + (firstNum % secondNum));
+        System.out.println("");
+
+        double radiusA = 7.5;
+        double area = radiusA * radiusA * Math.PI;
+        double perimeter = 2 * radiusA * Math.PI;
+        System.out.println("Perimeter is " +perimeter);
+        System.out.println("Area is " +area);
+        System.out.println("");
+        
+        int twoDegit = 25;
+        // int valLen = String.valueOf( twoDegit ).length();
+        int sumDegit = (twoDegit / 10) + (twoDegit % 10);
+        System.out.println(sumDegit);  
+        System.out.println("");
+        
+    }
+    
+}

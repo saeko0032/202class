@@ -1,0 +1,96 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pkg202class;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+
+/**
+ *
+ * @author CICCC-CIRAC
+ */
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+         double fahrenheitDegree = 212;
+         double celciusDegree = 0;
+         
+         celciusDegree = (fahrenheitDegree - 32) * 5 / 9;
+                 
+        System.out.println(celciusDegree);
+        System.out.println("");
+        
+        int allSum = 0;
+        for( int i = 0; i < 1001; i++) {
+            if (i/1000 == 1) {
+                allSum += 1;
+            } else if (i/100 >= 0) {
+                allSum += (i / 100) + ((i % 100) / 10) + (i % 10);
+            } else {
+                allSum += (i / 10) + (i % 10);
+            }
+        }
+       // System.out.println(allSum);
+                
+        int testDegit = 565;
+        int sumTestDegit = 0;
+        sumTestDegit = (testDegit / 100) + ((testDegit % 100) / 10) + (testDegit % 10);
+        System.out.println("sum of testdegit is "+ sumTestDegit);
+        System.out.println("");
+        
+        final Date currentTime = new Date();
+        SimpleDateFormat dateFormatGmt = new SimpleDateFormat("HH:mm:ss");
+        dateFormatGmt.setTimeZone(TimeZone.getTimeZone("GMT"));
+        System.out.println("GMT time: " + dateFormatGmt.format(currentTime));
+        System.out.println("");
+        
+        float distanceMeters = 2500;
+        float hour = 5;
+        float minutes = 56;
+        float seconds = 23;
+        
+        float perSecondsMeters =  distanceMeters/(seconds + (hour * 60 *60) + (minutes * 60));
+        System.out.println("Your spped in meters/second is " + perSecondsMeters);
+        
+        float perKMHour = (distanceMeters / 1000) / (hour + (minutes/60) + (seconds / 3600));
+        System.out.println("Your spped in km/hour is " + perKMHour);
+        
+        float perMileHour = (distanceMeters / 1609) / (hour + (minutes/60) + (seconds / 3600));
+        System.out.println("Your spped in km/hour is " + perMileHour);
+        System.out.println("");
+        
+        System.out.println("part2 a is " + (4 + 6 * 3));
+        System.out.println("part2 b is " + (6 / 3 * 7));
+        System.out.println("part2 c is " + (18 / 2 + 14 / 2));
+        System.out.println("part2 d is " + (16 / 2));
+        System.out.println("part2 e is " + (17 / 2));
+        System.out.println("part2 f is " + (28 / 5));
+        System.out.println("part2 g is " + (16 % 2));
+        System.out.println("part2 h is " + (17 % 2));
+        System.out.println("part2 i is " + (28 % 5));
+        System.out.println("part2 j is " + (28 % 5 * 3 + 1));
+        System.out.println("part2 k is " + ((2 + 3) * 4));
+        System.out.println("part2 l is " + (20 / ( 4 + 1)));
+        System.out.println("");
+        
+        System.out.println("part2 a(4 > 1) is " + (4 > 1));
+        System.out.println("part2 b(5 <= 18) is " + (5 <= 18));
+        System.out.println("part2 c(43 >= 43) is " + (43 >= 43));
+        System.out.println("part2 d(2 == 3) is " + (2 == 3));
+        System.out.println("part2 e(2 + 5 == 7) is " + (2 + 5 == 7));
+        System.out.println("part2 f(3 + 8 <= 10) is " + (3 + 8 <= 10));
+        System.out.println("part2 g(3 != 9) is " + (3 != 9));
+        System.out.println("part2 h(13 != 13) is " + (13 != 13));
+        System.out.println("part2 i(-4 != 4) is " + (-4 != 4));
+        System.out.println("part2 j(2 + 5 * 3 == 21) is " + (2 + 5 * 3 == 21));
+    }
+    
+}
