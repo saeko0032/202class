@@ -1,0 +1,125 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication2;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author CICCC-CIRAC
+ */
+public class JavaApplication2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        /*
+        * Program1 
+        * Write a program to accepat a line and check how many consonants, vowel
+       
+        Scanner sc1 = new Scanner(System.in);
+        
+        System.out.print("Enter a sentence:\t");
+        String sentence1 = sc1.nextLine();
+        int vowelCount = 0;
+        int sentenceLen = sentence1.length();
+        
+        for( int i = 0; i < sentenceLen; i++) {
+            char oneChar = sentence1.charAt(i);
+            if(oneChar == 'a' || oneChar == 'e' || 
+                    oneChar == 'i' || oneChar == 'o' || oneChar == 'u') {
+                vowelCount++;
+            }
+        }
+        System.out.println("total length" + sentenceLen);
+        System.out.println("vowel : " + vowelCount);
+        System.out.println("consonant : " + (sentenceLen - vowelCount));               
+        
+        /*
+        * Program2
+        
+        Scanner sc2 = new Scanner(System.in);
+        
+        System.out.print("Enter a sentence:\t");
+        String sentence2 = sc2.nextLine();
+        int sentence2Len = sentence2.length();
+        boolean isPalindrome = false;
+        
+        for (int i = 0; i< (sentence2Len / 2); i++) {
+            char firstIndexChar = sentence2.charAt(i);
+            char lastIndexChar = sentence2.charAt(sentence2Len - i - 1);
+            if(firstIndexChar != lastIndexChar) {
+                break;
+            } else {
+                if (((sentence2Len / 2) - i) > 1) {
+                    ; // continue
+                } else {
+                    isPalindrome = true;
+                }
+            }
+        }
+        System.out.println("isPalindrome : " + isPalindrome);        
+        /*
+        * program 4
+       
+        String markStr = "It is better to deserve honours and not have them than to have them than tothan to have them and not deserce them - Mark Twain.";
+        System.out.println("indexOf('h') : " + markStr.indexOf('h'));
+        System.out.println("charAt(14 ): " + markStr.charAt(14));
+        System.out.println(markStr.endsWith("Twain"));
+        System.out.println("replace('a','A') : " + markStr.replace('a', 'A'));       
+        /*
+        * program 5
+        
+        String sentence5 = "aaaa";
+        int sentence5Len = sentence5.length();
+        
+        for(int i = 0; i < sentence5Len; i++) {
+            char firstSentence5Chara = sentence5.charAt(i);
+            System.out.println("firstChar : " + firstSentence5Chara);
+            System.out.println("i : " + i);
+            for(int j = i + 1; j < sentence5Len -i; j++) {
+                System.out.println("j : " + j);
+                char checkChar = sentence5.charAt(j);
+                System.out.println("checkChar : " + checkChar);
+                if(firstSentence5Chara == checkChar) {
+                    String currentStr = sentence5.substring(0, j);
+                    String lastStr = sentence5.substring(j+1, sentence5Len);
+                    sentence5 = currentStr + lastStr;
+                    System.out.println("nowSentence : " + sentence5);                    
+                    sentence5Len -= 1;
+                    j -= 1;
+                } else {
+                    
+                System.out.println(false);                
+                }
+            }
+            
+        }
+        System.out.println(sentence5);
+*/
+        /*
+        * program 6 
+        */
+        String sentence6 = "pig";
+        String check1Sentence6 = "igp"; // yes
+        int sentence6Len = sentence6.length();
+        boolean isRotate = false;
+        for (int i = 1; i <sentence6Len + 1; i++) {
+            
+            String s = new StringBuilder(sentence6.substring(i,sentence6Len)).append(sentence6.substring(0,i)).toString();     
+            System.out.println(s);
+            if (s.equals(check1Sentence6)) {
+                isRotate = true;
+                break;
+            } else {
+                
+            }
+        }
+        System.err.println(isRotate);
+    }
+}

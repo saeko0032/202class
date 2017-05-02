@@ -1,0 +1,35 @@
+String s1 = "Ecample";
+String s2 = new String("Example");
+
+String.length(); // method to count string length
+
+hello ->5
+
+String str1 = "hello";
+String str2 = "hello";
+
+str.charAt(position)
+str1.compareTo(str2) str1 - str2(ascii number sub)
+
+substring(10) ->from 10 to end Position chara
+
+Random()
+
+nextFloat() nextInt() 
+
+ceil(2.6) -> 3.0
+floor(2.6) -> 2.0
+
+max(10,15,50) -> max = 50, min (10)
+
+pow 310 = pow(3,10) base, exp
+round -> nearest value
+
+
+1-> (d)
+2 -> false
+3 -> true
+4 -> (d)
+5 -> (d)
+6 -> (c)
+7 -> (d)
