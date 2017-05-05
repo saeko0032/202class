@@ -1,0 +1,31 @@
+Assignmnet
+1. c Runtime Error
+        // (1)
+        int x;
+        x = 5;
+        {
+            int y = 6;
+            System.out.println(x + "" + y);
+        }
+        System.out.println(x + "" + y);
+2. a 5
+        double a, b;
+        a = 3.0;
+        b = 4.0;
+        double c =Math.sqrt(a*a + b*b);
+        System.out.print(c);
+    }
+3. b 2
+    public static void main(String[] args) {
+        int var1 = 5;
+        int var2 = 6;
+        if((var2 = 1) == var1) {
+            System.out.print(var2);
+        } else {
+            System.out.print(++var2); // ++(var2=1)
+        }
+    }
+4. b
+5. b 200
+6. d IlikeJava
+7.
