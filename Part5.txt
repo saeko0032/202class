@@ -1,0 +1,141 @@
+public class Pizza {
+    private String toppings;
+    private int inches;
+    private double price;
+    
+    public void setToppings(String toppings) {
+        this.toppings = toppings;
+    }
+    public void setInches(int inches) {
+        this.inches = inches;
+    }
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    public String getToppings() {
+       return this.toppings;
+    }
+    public int getInches() {
+        return this.inches;
+    }
+    public double getPrice() {
+        return this.price;
+    }
+}
+
+public class TestPizza {
+    public static void main(String[] args) {
+        Pizza testPizza = new Pizza();
+        testPizza.setToppings("pepperoni");
+        testPizza.setInches(12);
+        testPizza.setPrice(13.99);
+        
+        System.out.println(testPizza.getToppings());
+        System.out.println(testPizza.getInches());
+        System.out.println(testPizza.getPrice());
+
+    }
+}
+ublic class Circle {
+
+    private int radius;
+    private double diameter;
+    private double area;
+
+    public Circle() {
+        this.radius = 1;
+        this.diameter = 2 * 1 * Math.PI;
+        this.area = 1 * 1 * Math.PI;
+    }
+
+    public void setRadius(int radius) {
+        this.radius = radius;
+        this.diameter = 2 * radius * Math.PI;
+        this.area = radius * radius * Math.PI;
+    }
+
+    public int getRadius() {
+        return this.radius;
+    }
+}
+
+public class TestCircle {
+
+    public static void main(String[] args) {
+        Circle circle = new Circle();
+        circle.setRadius(3);
+        System.out.println(circle.getRadius());
+
+        
+        Circle circle1 = new Circle();
+        circle1.setRadius(5);
+        System.out.println(circle1.getRadius());
+
+        
+        Circle circle2 = new Circle();
+        System.out.println(circle2.getRadius());
+    }
+
+}
+public class Student {
+
+    private int ID;
+    private int creditHours;
+    private int points;
+    private int average;
+
+    public void setID(int id) {
+        this.ID = id;
+    }
+
+    public void setCreditHours(int creditHours) {
+        this.creditHours = creditHours;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
+    public int getID() {
+        return this.ID;
+    }
+
+    public int getCreditHours() {
+        return this.creditHours;
+    }
+
+    public int getPoints() {
+        return this.points;
+    }
+
+    public int getAverage() {
+        return this.points / this.creditHours;
+    }
+
+}
+
+public class ShowStudent {
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.setCreditHours(25);
+        student.setID(123);
+        student.setPoints(1000);
+        
+        System.out.println(student.getID());
+        System.out.println(student.getCreditHours());
+        System.out.println(student.getPoints());
+        System.out.println(student.getAverage());
+
+    }
+    
+}
+   public static void main(String[] args) {
+        Student student = new Student();
+        
+        System.out.println(student.getID());
+        System.out.println(student.getCreditHours());
+        System.out.println(student.getPoints());
+        System.out.println(student.getAverage());
+
+    }
+ 

@@ -1,0 +1,15 @@
+public calss Sample {
+	private String name;
+	private String salution;
+
+	// setter
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	// getter
+	public String getName() {
+		return name;
+	}
+
+}
