@@ -1,0 +1,254 @@
+<Exersice for inheritance>
+1. c you can copy methods that you already created
+2. extends
+3. d All of the previous statements are valid.
+4. a A child class inherits from a parent class.
+5. a overrides
+6. d parent class
+7. d cocealing fields
+8. d. both a and b
+9. c static
+10. "vroom" "truck1" "car 2"
+11.
+public class MonsterTruck extends Truck {
+
+    public void m1() {
+        System.out.println("monster 1");
+    }
+
+    public void m2() {
+        super.m1();
+        System.out.print(" / ");
+        super.m2();
+    }
+
+    public String toString() {
+        return "monster " + super.toString();
+    }
+}
+12.
+public class Janitor extends Employee {
+    public int getHours() {
+        return super.getHours() * 2; // works 80 hours / week
+    }
+    public double getSalary() {
+        return super.getSalary() - 10000.0;
+    }
+    public int getVacationDays() {
+        return super.getVacationDays() / 2;
+    }
+    public void clean() {
+        System.out.println("Workin");
+    }
+13.
+public class DemoBook {
+    public static void main(String[] args) {
+        TextBook textBook1 = new TextBook();
+        textBook1.setGradeLevel(10);
+        textBook1.setPages(20);
+        textBook1.setTitle("Java Program");
+        
+        Book book1 = new Book();
+        book1.setPages(5);
+        book1.setTitle("book");
+        
+        System.out.println(textBook1);
+        System.out.println(book1);
+    }
+}
+public class Book {
+    private String title;
+    private int pages;
+    
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    public void setPages(int pages) {
+        this.pages = pages;
+    }
+    public String getTitle() {
+        return this.title;
+    }
+    public int getPages() {
+        return this.pages;
+    }
+        public String toString() {
+        return "title :" + this.getTitle() + " pages : " + this.getPages();
+    }
+}
+public class TextBook extends Book{
+    private int gradeLevel;
+    
+    public void setGradeLevel(int gradeLevel) {
+        this.gradeLevel = gradeLevel;
+    }
+    public int getGradeLevel() {
+        return this.gradeLevel;
+    }
+    public String toString() {
+        return "title :" + super.getTitle() + " pages : " + super.getPages() + " gradeLevel : " + this.getGradeLevel();
+    }
+}
+14.
+public class DemoSquare {
+    public static void main(String[] args) {
+        Square square = new Square();
+        square.setHeight(10);
+        square.setWidth(5);
+        System.out.println("square surface : "+ square.computeSurfaceArea());
+    
+        Cube cube = new Cube();
+        cube.setHeight(3);
+        cube.setWidth(4);
+        cube.setDepth(5);
+        System.out.println("cube surface : "+ cube.computeSurfaceArea());
+    }
+public class Cube extends Square {
+
+    private int depth;
+    private int surfaceArea;
+
+    public void setDepth(int depth) {
+        this.depth = depth;
+    }
+
+    public int computeSurfaceArea() {
+        this.surfaceArea = super.computeSurfaceArea() * this.depth;
+        return this.surfaceArea;
+    }
+}
+public class Square {
+
+    private int height;
+    private int width;
+    private int surfaceArea;
+
+    public int computeSurfaceArea() {
+        this.surfaceArea = this.height * this.width;
+        return this.surfaceArea;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+}
+15.
+public class HotelRoom {
+
+    private int roomnumber;
+    private double nightRentRate;
+
+    public HotelRoom(int roomnumber) {
+        this.roomnumber = roomnumber;
+        if (roomnumber <= 299) {
+            this.nightRentRate = 69.95;
+        } else {
+            this.nightRentRate = 89.95;
+        }
+    }
+
+    public int getRoomNumber() {
+        return this.roomnumber;
+    }
+
+    public double getNightRentRate() {
+        return this.nightRentRate;
+    }
+
+    public void setNightRentRate(double nightRentRate) {
+        this.nightRentRate = nightRentRate;
+    }
+}
+public class Suite extends HotelRoom {
+    
+    public Suite(int roomnumber) {
+        super(roomnumber);
+        super.setNightRentRate(super.getNightRentRate() + 40.0);
+    }   
+}
+public class UserHotelRoom {
+
+    public static void main(String[] args) {
+        HotelRoom room1 = new HotelRoom(288);
+        System.out.println("room1 number : " + room1.getRoomNumber() + " price : " + room1.getNightRentRate());
+        HotelRoom room2 = new HotelRoom(300);
+        System.out.println("room2 number : " + room2.getRoomNumber() + " price : " + room2.getNightRentRate());
+
+        Suite suite1 = new Suite(288);
+        System.out.println("suite1 number : " + suite1.getRoomNumber() + " price : " + suite1.getNightRentRate());
+        Suite suite2 = new Suite(300);
+        System.out.println("suite2 number : " + suite2.getRoomNumber() + " price : " + suite2.getNightRentRate());
+
+    }
+}
+16.
+public class HavePet {
+
+    public static void main(String[] args) {
+        Chihuahua chihuahua = new Chihuahua();
+        chihuahua.bark();
+        chihuahua.setAge(4);
+        chihuahua.setName("Kimchi");
+        chihuahua.SetOwnerName("Ken");
+        System.out.println(chihuahua);
+
+    }
+}
+public class Pet {
+
+    private String name;
+    private int age;
+    private String ownerName;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void SetOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getOwnerName() {
+        return this.ownerName;
+    }
+
+    public int getAge() {
+        return this.age;
+    }
+
+    public String toString() {
+        return "Name : " + this.getName() + " Age : " + this.getAge() + " OwnerName : " + this.getOwnerName();
+    }
+}
+public class Dogs extends Pet {
+
+    public void bark() {
+        System.out.println("bow wow");
+    }
+
+    public String toString() {
+        return super.toString();
+    }
+}
+public class Chihuahua extends Dogs {
+
+    public void bark() {
+        System.out.println("kyan kyan");
+    }
+
+    public String toString() {
+        return super.toString();
+    }
+}
