@@ -10,7 +10,6 @@ package assignment1;
  * @author CICCC-CIRAC
  */
 public class Service {
-
     private String serviceDescription;
     private double price;
     private int time;
@@ -32,9 +31,10 @@ public class Service {
     public int getTime() {
         return this.time;
     }
-
-    void compareTo(Service p2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    @Override
+    public String toString() {
+        return " {time: " + this.time + " price: " + this.price + " service: " + this.serviceDescription + "}" ;
     }
 
 }
