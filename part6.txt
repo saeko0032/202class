@@ -1,13 +1,17 @@
 <Exersice for inheritance>
-1. c you can copy methods that you already created
-2. extends
-3. d All of the previous statements are valid.
-4. a A child class inherits from a parent class.
-5. a overrides
-6. d parent class
-7. d cocealing fields
-8. d. both a and b
-9. c static
+1. x -> c you can copy methods that you already created
+   o -> d many of the methods you need have already been used and tested
+2. o -> extends
+3. x -> d All of the previous statements are valid.(not class method)
+   o -> c modelHeigh.getFloors(); ( this one is instance method)
+4. o -> a A child class inherits from a parent class.
+5. o -> a overrides
+6. o -> d parent class
+7. x -> d cocealing fields (when super class has the same name variable of sub class one, it's concealing fields)
+   o -> b infromation hiding
+8. x -> d. both a and b (it does not mention about another package)
+   o -> protected
+9. o -> c static
 10. "vroom" "truck1" "car 2"
 11.
 public class MonsterTruck extends Truck {
