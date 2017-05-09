@@ -1,0 +1,237 @@
+1. a must not code any methods within them
+2. c both of the above
+3. a one
+4. b
+5. a interface
+6. 
+public abstract class Book {
+
+    String title;
+    double price;
+
+    public Book(String title) {
+        this.title = title;
+    }
+
+    ;
+    public String getTitle() {
+        return this.title;
+    }
+
+    public double getPrice() {
+        return this.price;
+    }
+
+    abstract public void setPrice();
+
+    public String toString() {
+        return "title : " + this.title + " price : " + this.price;
+    }
+}
+public class BookArray {
+
+    public static void main(String[] args) {
+        ArrayList<Book> list = new ArrayList();
+        list.add(new BookFiction("Fiction 1"));
+        list.add(new BookFiction("Fiction 2"));
+        list.add(new BookFiction("Fiction 3"));
+        list.add(new BookFiction("Fiction 4"));
+        list.add(new BookFiction("Fiction 5"));
+        list.add(new BookFiction("Fiction 6"));
+        list.add(new NonFiction("NonFiction 1"));
+        list.add(new NonFiction("NonFiction 2"));
+        list.add(new NonFiction("NonFiction 3"));
+        list.add(new NonFiction("NonFiction 4"));
+
+        list.forEach(item -> System.out.println(item));
+
+//        for (Book item : list) {
+//            System.out.println(item);
+//        }
+    }
+}
+public class BookFiction extends Book {
+
+    public BookFiction(String title) {
+        super(title);
+        setPrice();
+    }
+
+    public void setPrice() {
+        super.price = 24.99;
+    }
+
+    public String toString() {
+        return super.toString();
+    }
+}
+public class NonFiction extends Book {
+
+    public NonFiction(String title) {
+        super(title);
+        setPrice();
+    }
+
+    @Override
+    public void setPrice() {
+        super.price = 37.99;
+    }
+
+    public String toString() {
+        return super.toString();
+    }
+}
+public class UseBook {
+
+    public static void main(String[] args) {
+        BookFiction bf = new BookFiction("Fiction AAA");
+        NonFiction nf = new NonFiction("Non fiction BBB");
+
+        System.out.println(bf);
+        System.out.println(nf);
+
+    }
+}
+7.
+public class DemoAccounts {
+    public static void main(String[] args) {
+        Checking ck = new Checking(200);
+        ck.setBalance(10.12);
+        Saving s = new Saving(200, 1);
+        s.setBalance(10.33);
+        
+        System.out.println(ck);
+        System.out.println(s);
+    }   
+}
+public class Checking extends Account {
+
+    public Checking(int number) {
+        super(number);
+    }
+
+    @Override
+    public void getBalance() {
+        System.out.println("Checking Account Information");
+        System.out.println("balance" + super.balance);
+    }
+
+    @Override
+    public void getNumber() {
+        System.out.println("Checking Account Information");
+        System.out.println("number" + super.number);
+    }
+
+    @Override
+    public String toString() {
+        return "Checking Account Information" + " account number" + super.number + " balance : " + super.balance;
+    }
+
+}
+public class Saving extends Account {
+
+    int interestRate;
+
+    public Saving(int number, int interestRate) {
+        super(number);
+        this.interestRate = interestRate;
+    }
+
+    @Override
+    public void getBalance() {
+        System.out.println("Saving Account Information");
+        System.out.println("balance" + super.balance);
+        System.out.println("interest rate" + this.interestRate);
+    }
+
+    @Override
+    public void getNumber() {
+        System.out.println("Saving Account Information");
+        System.out.println("number" + super.number);
+    }
+
+    @Override
+    public String toString() {
+        return "Saving Account Information" + " account number" + super.number + " balance : " + super.balance + " interest rate : " + this.interestRate;
+    }
+}
+8.
+public class UsePlayer {
+    public static void main(String[] args) {
+        Musician m1 = new Musician();
+        m1.play();
+        Actor ac = new Actor();
+        ac.play();
+        Child ch = new Child();
+        ch.play();
+    }
+}
+public class Musician implements Player  {
+    @Override
+    public void play() {
+        System.out.println("play music");
+    } 
+}
+public class Child  implements Player {
+    @Override
+    public void play() {
+        System.out.println("play in the park");
+    }
+}
+public class Actor implements Player {
+    @Override
+    public void play() {
+        System.out.println("play some role");
+    } 
+}
+9.
+public class DemoTurners {
+    public static void main(String[] args) {
+        Leaf leaf = new Leaf();
+        Page page = new Page();
+        Pancake pc = new Pancake();
+        leaf.turn();
+        page.turn();
+        pc.turn();
+    }
+}
+public class Leaf implements Turner {
+    @Override
+    public void turn() {
+        System.out.println("Changing colors");
+    }    
+}
+public class Pancake implements Turner {
+    @Override
+    public void turn() {
+        System.out.println("Flipping");
+    }
+}
+public class Page implements Turner {
+    @Override
+    public void turn() {
+        System.out.println("Going to the next page.");
+    }    
+}
+10.
+public class DemoTurners2 {
+    public static void main(String[] args) {
+        Table table = new Table();
+        table.turn();
+        Direction direction = new Direction();
+        direction.turn();
+    }
+}
+public class Direction implements Turner {
+    @Override
+    public void turn() {
+        System.out.println("change direction");
+    }    
+}
+public class Table implements Turner {
+    @Override
+    public void turn() {
+        System.out.println("you can reach");
+    }
+}
+
