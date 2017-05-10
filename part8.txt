@@ -1,0 +1,133 @@
+1. c a final path
+2. a Streams are channels through whice bytes flow.
+3.
+    public static void main(String[] args) {
+        Path file = Paths.get("C:\\Users\\CICCC-CIRAC\\Documents\\testdata\\fileInfo.txt");
+        BasicFileAttributes attr = null;
+        try {
+            attr = Files.readAttributes(file, BasicFileAttributes.class);
+        } catch (IOException ex) {
+            Logger.getLogger(FileStatistics.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println("fileSize : " + attr.size());
+        System.out.println("last modified data : " + attr.lastModifiedTime());
+        System.out.println("fileName : " + file.getFileName());
+        System.out.println("folderName : " + file.getParent());        
+    }
+}
+public class WritePhoneList {
+
+    public static void main(String[] args) {
+        ArrayList<User> list = new ArrayList();
+
+        while (true) {
+            System.out.println("Enter firstName or quit : q");
+            Scanner sc = new Scanner(System.in);
+            String firstName = sc.nextLine();
+            if (firstName.equals("q")) {
+                break;
+            }
+
+            System.out.println("Enter lastName");
+            String lastName = sc.nextLine();
+
+            System.out.println("Enter phoneNumber");
+            int phoneNumber = sc.nextInt();
+
+            User user = new User(firstName, lastName, phoneNumber);
+            list.add(user);
+        }
+
+        BufferedWriter bw = null;
+        String phoneData = null;
+        try {
+            File file = new File("phonelist.txt");
+
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            FileWriter fw = new FileWriter(file);
+            bw = new BufferedWriter(fw);
+            for (User user : list) {
+                bw.write(user.toString());
+                bw.newLine();
+            }
+            System.out.println("Success");
+        } catch (IOException ex) {
+            Logger.getLogger(WritePhoneList.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if (bw != null) {
+                    bw.close();
+                }
+            } catch (Exception ex) {
+                Logger.getLogger(WritePhoneList.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+
+    }
+
+}
+public class displaySavedPhoneList {
+
+    public static void main(String[] args) {
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader("phoneList.txt"));
+            String str;
+            str = br.readLine();
+            while (str != null) {
+                System.out.println(str);
+                str = br.readLine();
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(displaySavedPhoneList.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(displaySavedPhoneList.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+}
+public class User {
+
+    private String firstName;
+    private String lastName;
+    private int phoneNumber;
+
+    public User(String firstName, String lastName, int phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+    }
+    @Override
+    public String toString() {
+        return "firstName : " + firstName + " lastName : " + lastName + " phone : " + phoneNumber + "\n";
+    }
+}
+public class DisplaySelectedNumbers {
+    public static void main(String[] args) {
+        System.out.println("who do you wanna see?");
+        Scanner sc = new Scanner(System.in);
+        String firstName = sc.nextLine();
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader("phoneList.txt"));
+            String str;
+            str = br.readLine();
+            while (str != null) {
+                String tempStr = "firstName : " + firstName;
+                if (str.startsWith(tempStr)) {
+                    System.out.println(str);
+                } else {
+                    System.out.println("no user founded.");
+                }
+                str = br.readLine();
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(displaySavedPhoneList.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(displaySavedPhoneList.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+}
