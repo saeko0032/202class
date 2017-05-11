@@ -1,0 +1,113 @@
+1. d exception
+2. b the keyword catch
+3. d the first matching catch block executes
+4. c bothe of the above
+5. d neither a nor b
+6. b call stack
+7.
+public class ProductCode {
+    public static void main(String[] args) {
+        String code;
+        char zone;
+        int district, valid = 0, banned = 0;
+        
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.print("Enter product code(stop to quit) : ");
+        code = scan.nextLine();
+        
+        while(!code.equals("STOP"))
+        {
+            try{
+                zone = code.charAt(9);
+                district = Integer.parseInt(code.substring(3, 7));
+                valid++;
+                if (zone == 'R' && district > 2000) {
+                    banned++;
+                }
+            } catch(StringIndexOutOfBoundsException exception) {
+                System.out.println("Improper code length : " + code);            
+            } catch (NumberFormatException exception) {
+                System.out.println("District is not numeric :" + code);
+            }
+        System.out.print("Enter product code(stop to quit) : ");
+        code = scan.nextLine();
+        }
+        System.out.println("# of valid code enterd :" + valid);
+        System.out.println("# of banned codes enterd :" + banned);
+    }
+}
+8.
+public class ExceptionScope {
+
+    public void level1() {
+        System.out.println("Level 1 beginning.");
+        try {
+            level2();
+        } catch (ArithmeticException ex) {
+            System.out.println();
+            System.out.println("The exception message is : " + ex.getMessage());
+            System.out.println();
+            System.out.println("The call stack trace : ");
+            ex.printStackTrace(System.out);
+            System.out.println();
+        }
+        System.out.println("Level 1 ending");
+    }
+
+    public void level2() {
+        System.out.println("Level 2 beginning");
+        level3();
+        System.out.println("Level 2 ending");
+    }
+
+    public void level3() {
+        int numerator = 10, denominator = 0;
+        System.out.println("Level 3 beginning");
+        int result = numerator / denominator;
+        System.out.println("Level 3 ending");
+    }
+}
+public class Propagation {
+    public static void main(String[] args) {
+        ExceptionScope demo = new ExceptionScope();
+    
+        System.out.println("Program beginning");
+        demo.level1();
+        System.out.println("Program ending");
+    }   
+}
+9.
+public class GoTooFar {
+
+    public static void main(String[] args) {
+        int[] intArray = {1, 2, 3, 4, 5};
+        int i = 0;
+        try {
+            while (true) {
+                System.out.println(intArray[i]);
+                i++;
+            }
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            System.out.println("you go soo far");
+        }
+    }
+}
+10.
+public class NegativeArray {
+
+    public static void main(String[] args) {
+        String code;
+        Scanner sc = new Scanner(System.in);
+        try {
+            code = sc.nextLine();
+            int codeNum = Integer.parseInt(code);
+            int[] array = new int[codeNum];
+            System.out.println("success to create array");
+        } catch (NegativeArraySizeException ex) {
+            System.out.println("failed to creat array cuz you typed negative value");
+        } catch (NumberFormatException ex) {
+            System.out.println("failed to creat array cuz you typed not number");
+        }
+    }
+}
