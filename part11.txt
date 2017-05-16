@@ -1,0 +1,63 @@
+public class NewFXMain extends Application { // I need to write extends
+
+    Button btn1, btn2;
+    Label lbl1, lbl2;
+
+    FlowPane flwPnl1, flwPnl2;
+    Scene scene1, scene2;
+    Stage oneStage;
+
+    @Override
+    public void start(Stage primaryStage) {
+        oneStage = primaryStage;
+        btn1 = new Button();
+        btn2 = new Button();
+        lbl1 = new Label();
+        lbl2 = new Label();
+        flwPnl1 = new FlowPane();
+        flwPnl2 = new FlowPane();
+        
+        
+        btn1.setText("Go to scene2");
+        btn1.setOnAction(e -> ButtonClicked(e));
+
+        btn2.setText("Go to scene1");
+        btn2.setOnAction(e -> ButtonClicked(e));
+
+        lbl1.setText("scene1");
+        lbl2.setText("scene1");
+
+        flwPnl1.setVgap(10);
+        flwPnl2.setVgap(10);
+
+        flwPnl1.setStyle("-fx-background-color: tan;-fx-padding: 10px;");
+        flwPnl2.setStyle("-fx-background-color: red;-fx-padding: 10px;");
+
+        //add everything to panes
+        flwPnl1.getChildren().addAll(lbl1, btn1);
+        flwPnl2.getChildren().addAll(lbl2, btn2);
+
+        scene1 = new Scene(flwPnl1, 200, 100);
+        scene2 = new Scene(flwPnl2, 200, 100);
+
+        oneStage.setTitle("Hello World!");
+        oneStage.setScene(scene1);
+        oneStage.show();
+    }
+
+    public void ButtonClicked(ActionEvent e) {
+        if (e.getSource() == btn1) {
+            oneStage.setScene(scene2);
+        } else {
+            oneStage.setScene(scene1);
+        }
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+}
