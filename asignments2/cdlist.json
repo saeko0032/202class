@@ -1,0 +1,26 @@
+[
+  {
+    "albumTitle":"cdpara1-1","albumArtist":"cdpara1-2","numberOfTrucks":1,"numberOfDiscs":1,"songList":
+    [
+      {
+        "songTitle":"song1title","songArtist":"song1artist","album":"","genre":"","songPrice":0,"isPurchase":false
+      },
+      {
+        "songTitle":"song2title","songArtist":"song2artist","album":"","genre":"","songPrice":0,"isPurchase":false
+      }
+    ],
+    "isPurchase":false,"costOfCD":0
+  },
+  {
+    "albumTitle":"cdpara2-1","albumArtist":"cdpara2-2","numberOfTrucks":1,"numberOfDiscs":1,"songList":
+      [
+        {
+          "songTitle":"song3title","songArtist":"song4artist","album":"","genre":"","songPrice":0,"isPurchase":false
+        },
+        {
+          "songTitle":"song3title","songArtist":"song4artist","album":"","genre":"","songPrice":0,"isPurchase":false
+        }
+      ],
+      "isPurchase":false,"costOfCD":0
+    }
+]
