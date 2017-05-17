@@ -1,0 +1,38 @@
+    private void okBtnActionPerformed(java.awt.event.ActionEvent evt) {                                      
+        String userStr = userNameTextField.getText();
+        String passwdStr = passwdTextField.getText();
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            Class.forName(JDBC_DRIVER);
+            System.out.println("Connecting to database...");
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            System.out.println("Creating statement...");
+            stmt = conn.createStatement();
+            String sql;
+            sql = "SELECT * FROM DETAILS";
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                String name = rs.getString("SNAME");
+                String passwd = rs.getString("SPASSWD");
+                if(userStr.equals(name) && passwdStr.equals(passwd)) {
+                    loginPermit = true;
+                    break;
+                }
+            }
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException se) {
+            se.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        // connect to db
+        if (loginPermit) {
+            msgLabel.setText("Congratulations! you can go home.");
+        } else {
+            msgLabel.setText("Boooooooooooooooooooooooooooooooo");
+        }
+
+    }  
