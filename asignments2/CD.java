@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package assignments2;
+package test.file1;
 
-/**
- *
- * @author CICCC-CIRAC
- */
+import java.util.ArrayList;
+
 public class CD {
 
     private String albumTitle;
@@ -16,18 +9,20 @@ public class CD {
     private int numberOfTrucks;
     private int numberOfDiscs;
     private String albumGenre;
-    private Song[] songList;
+    private ArrayList<Song> songList;
     private boolean isPurchase;
-    private int costOfCD;
+    private double costOfCD;
 
-    public CD(String albumTitle, String albumArtist, Song[] songList, boolean isPurchase) {
-        this.albumTitle = albumTitle;
+    public CD(String albumTitle, String albumArtist, String albumGenre, ArrayList<Song> songList, int numberOfTrucks, boolean isPurchase, double costOfCD) {
+
+    	this.albumTitle = albumTitle;
         this.albumArtist = albumArtist;
-        this.numberOfTrucks = 1;
-        this.numberOfDiscs = 1;
+    	this.numberOfTrucks = numberOfTrucks;
         this.songList = songList;
-        this.isPurchase = false;
-        this.costOfCD = 0;
+        this.albumGenre = albumGenre;
+        this.numberOfDiscs = 1;
+        this.isPurchase = isPurchase;
+        this.costOfCD = costOfCD;
     }
 
     public String getAlbumTitle() {
@@ -70,11 +65,11 @@ public class CD {
         this.albumGenre = albumGenre;
     }
 
-    public Song[] getSongList() {
+    public ArrayList<Song> getSongList() {
         return songList;
     }
 
-    public void setSongList(Song[] songList) {
+    public void setSongList(ArrayList<Song> songList) {
         this.songList = songList;
     }
 
@@ -86,11 +81,11 @@ public class CD {
         this.isPurchase = isPurchase;
     }
 
-    public int getCostOfCD() {
+    public double getCostOfCD() {
         return costOfCD;
     }
 
-    public void setCostOfCD(int costOfCD) {
+    public void setCostOfCD(double costOfCD) {
         this.costOfCD = costOfCD;
     }
 

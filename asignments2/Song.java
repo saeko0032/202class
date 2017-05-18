@@ -1,29 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package assignments2;
+package test.file1;
 
-/**
- *
- * @author CICCC-CIRAC
- */
 public class Song {
-
     private String songTitle;
     private String songArtist;
-    private String album;
     private String genre;
-    private int songPrice;
+    private double songPrice;
     private boolean isPurchase;
 
-    public Song(String songTitle, String songArtist) {
+    public Song(String songTitle, String songArtist, String genre, double songPrice, boolean isPurchase) {
         this.songTitle = songTitle;
         this.songArtist = songArtist;
-        this.album = "";
-        this.genre = "";
-        this.isPurchase = false;
+        this.genre = genre;
+        this.songPrice = songPrice;
+        this.isPurchase = isPurchase;
     }
 
     public String getSongTitle() {
@@ -42,14 +31,6 @@ public class Song {
         this.songArtist = songArtist;
     }
 
-    public String getAlbum() {
-        return album;
-    }
-
-    public void setAlbum(String album) {
-        this.album = album;
-    }
-
     public String getGenre() {
         return genre;
     }
@@ -58,11 +39,11 @@ public class Song {
         this.genre = genre;
     }
 
-    public int getSongPrice() {
+    public double getSongPrice() {
         return songPrice;
     }
 
-    public void setSongPrice(int songPrice) {
+    public void setSongPrice(double songPrice) {
         this.songPrice = songPrice;
     }
 
