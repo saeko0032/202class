@@ -1,26 +1,115 @@
 [
   {
-    "albumTitle":"cdpara1-1","albumArtist":"cdpara1-2","numberOfTrucks":1,"numberOfDiscs":1,"songList":
-    [
+    "albumTitle": "Feel",
+    "albumArtist": "Various",
+    "numberOfTrucks": 8,
+    "numberOfDiscs": 1,
+    "albumGenre": "Healing",
+    "songList": [
       {
-        "songTitle":"song1title","songArtist":"song1artist","album":"","genre":"","songPrice":0,"isPurchase":false
+        "songTitle": "Beyond the cuntury",
+        "songArtist": "Maka Makara",
+        "genre": "Classical",
+        "songPrice": 3.12,
+        "isPurchase": true
       },
       {
-        "songTitle":"song2title","songArtist":"song2artist","album":"","genre":"","songPrice":0,"isPurchase":false
+        "songTitle": "Kamigami no uta",
+        "songArtist": "Himekami",
+        "genre": "Healthy",
+        "songPrice": 2.5,
+        "isPurchase": true
+      },
+      {
+        "songTitle": "Prayer",
+        "songArtist": "Secret Garden",
+        "genre": "Relax",
+        "songPrice": 3.12,
+        "isPurchase": true
+      },
+      {
+        "songTitle": "Return To Innocence",
+        "songArtist": "Enigma",
+        "genre": "Relax",
+        "songPrice": 2.5,
+        "isPurchase": true
+      },
+      {
+        "songTitle": "Eyes on me",
+        "songArtist": "Faye Wong",
+        "genre": "Relax",
+        "songPrice": 3.12,
+        "isPurchase": true
+      },
+      {
+        "songTitle": "Time to say goodbye",
+        "songArtist": "Andrea boceli",
+        "genre": "Relax",
+        "songPrice": 2.5,
+        "isPurchase": true
+      },
+      {
+        "songTitle": "Yeha - Noha",
+        "songArtist": "Sacred Sprit",
+        "genre": "Relax",
+        "songPrice": 2.5,
+        "isPurchase": true
+      },
+      {
+        "songTitle": "Busindre Reel",
+        "songArtist": "Hevia",
+        "genre": "Relax",
+        "songPrice": 3.12,
+        "isPurchase": true
       }
     ],
-    "isPurchase":false,"costOfCD":0
+    "isPurchase": true,
+    "costOfCD": 22.48
   },
   {
-    "albumTitle":"cdpara2-1","albumArtist":"cdpara2-2","numberOfTrucks":1,"numberOfDiscs":1,"songList":
-      [
-        {
-          "songTitle":"song3title","songArtist":"song4artist","album":"","genre":"","songPrice":0,"isPurchase":false
-        },
-        {
-          "songTitle":"song3title","songArtist":"song4artist","album":"","genre":"","songPrice":0,"isPurchase":false
-        }
-      ],
-      "isPurchase":false,"costOfCD":0
-    }
+    "albumTitle": "Let it be",
+    "albumArtist": "The Beatles",
+    "numberOfTrucks": 5,
+    "numberOfDiscs": 1,
+    "albumGenre": "Rock",
+    "songList": [
+      {
+        "songTitle": "Two of US",
+        "songArtist": "The Beatles",
+        "genre": "Rock",
+        "songPrice": 2,
+        "isPurchase": true
+      },
+      {
+        "songTitle": "Dig a pony",
+        "songArtist": "The Beatles",
+        "genre": "Rock",
+        "songPrice": 2,
+        "isPurchase": false
+      },
+      {
+        "songTitle": "Across the Universe",
+        "songArtist": "The Beatles",
+        "genre": "Rock",
+        "songPrice": 2,
+        "isPurchase": false
+      },
+      {
+        "songTitle": "I Me Mine",
+        "songArtist": "The Beatles",
+        "genre": "Rock",
+        "songPrice": 2,
+        "isPurchase": true
+      },
+      {
+        "songTitle": "Let it be",
+        "songArtist": "The Beatles",
+        "genre": "Rock",
+        "songPrice": 2,
+        "isPurchase": true
+      }
+    ],
+    "isPurchase": false,
+    "costOfCD": 10
+  }
 ]
