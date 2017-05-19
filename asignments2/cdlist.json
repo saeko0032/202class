@@ -5,6 +5,8 @@
     "numberOfTrucks": 8,
     "numberOfDiscs": 1,
     "albumGenre": "Healing",
+    "isPurchase": true,
+    "costOfCD": 22.48,
     "songList": [
       {
         "songTitle": "Beyond the cuntury",
@@ -62,9 +64,7 @@
         "songPrice": 3.12,
         "isPurchase": true
       }
-    ],
-    "isPurchase": true,
-    "costOfCD": 22.48
+    ]
   },
   {
     "albumTitle": "Let it be",
@@ -72,6 +72,8 @@
     "numberOfTrucks": 5,
     "numberOfDiscs": 1,
     "albumGenre": "Rock",
+    "isPurchase": false,
+    "costOfCD": 10,
     "songList": [
       {
         "songTitle": "Two of US",
@@ -108,8 +110,6 @@
         "songPrice": 2,
         "isPurchase": true
       }
-    ],
-    "isPurchase": false,
-    "costOfCD": 10
+    ]
   }
 ]

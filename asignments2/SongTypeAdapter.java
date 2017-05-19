@@ -1,6 +1,7 @@
 package test.file1;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
@@ -9,8 +10,10 @@ import com.google.gson.stream.JsonWriter;
 public class SongTypeAdapter extends TypeAdapter {
 
 	@Override
-	public Object read(final JsonReader in) throws IOException {
+	public Song read(final JsonReader in) throws IOException {
+
 		final Song song = new Song(null, null, null, 0, false);
+
 		in.beginObject();
 		while(in.hasNext()) {
 			switch(in.nextName()) {
@@ -30,9 +33,8 @@ public class SongTypeAdapter extends TypeAdapter {
 				song.setIsPurchase(in.nextBoolean());
 				break;
 			}
-			
 		}
-		// TODO Auto-generated method stub
+		in.endObject();
 		return song;
 	}
 

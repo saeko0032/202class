@@ -9,20 +9,20 @@ public class CD {
     private int numberOfTrucks;
     private int numberOfDiscs;
     private String albumGenre;
-    private ArrayList<Song> songList;
     private boolean isPurchase;
     private double costOfCD;
+    private ArrayList<Song> songList;
 
-    public CD(String albumTitle, String albumArtist, String albumGenre, ArrayList<Song> songList, int numberOfTrucks, boolean isPurchase, double costOfCD) {
+    public CD(String albumTitle, String albumArtist, String albumGenre, int numberOfTrucks, boolean isPurchase, double costOfCD, ArrayList<Song> songList) {
 
     	this.albumTitle = albumTitle;
         this.albumArtist = albumArtist;
     	this.numberOfTrucks = numberOfTrucks;
-        this.songList = songList;
         this.albumGenre = albumGenre;
         this.numberOfDiscs = 1;
         this.isPurchase = isPurchase;
         this.costOfCD = costOfCD;
+        this.songList = songList;
     }
 
     public String getAlbumTitle() {
