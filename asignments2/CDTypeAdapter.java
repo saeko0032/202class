@@ -58,7 +58,7 @@ public class CDTypeAdapter  extends TypeAdapter{
 
 	@Override
 	public void write(JsonWriter arg0, Object arg1) throws IOException {
-		// TODO Auto-generated method stub
+		// do not need to write it now
 		
 	}
 	
