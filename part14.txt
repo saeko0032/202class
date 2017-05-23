@@ -1,0 +1,111 @@
+public class ListExercise {
+    public static void main(String[] args) {
+        List tempList = new ArrayList();
+        tempList.add(1);
+        tempList.add(2);
+        tempList.add(3);
+        tempList.add(4);
+        tempList.add(5);
+        tempList.add(6);
+        tempList.add(7);
+        
+        int i = 2;
+        while(!tempList.isEmpty()) {
+            if(i<tempList.size()) {
+                 tempList.remove(i);
+                 tempList.forEach(s -> System.out.print(s));
+                 System.out.println("");
+                 i+= 2;            
+            } else {
+                i = i - tempList.size();
+            }
+        }
+    }
+}
+1. D all the above
+2. B ArrayList
+3. List.forEach(Object o -> System.out.println(o....);
+4.
+ArrayList<String> arrl = new ArrayList<String>();
+        //adding elements to the end
+        arrl.add("First");
+        ArrayList<String> copy = (ArrayList<String>) arrl.clone();
+5 - 10.
+        /// pg 5
+        List cm1 = new ArrayList();
+        cm1.add(1);
+        cm1.add(2);
+        
+        List cm2 = new ArrayList();
+        cm2.add(2);
+        cm2.add(1);
+        
+        boolean result;
+        result = compare2List(cm1, cm2);
+        System.out.println(result);
+        // pg 6
+        List<Integer> numList = new ArrayList();
+        numList.add(10);
+        numList.add(200);
+        System.out.println(sumList(numList));
+        // pg 7
+        cm2 = reverse(cm1);
+        cm2.forEach(s -> System.out.println(s));
+        // pg 8
+        List<Object> linkList = new LinkedList<>();
+        linkList.add(1);
+        linkList.add(2);
+        
+        int index = linkList.size();
+        linkList.add(index, 3);
+        linkList.forEach(s -> System.out.println(s));
+        // pg 9
+        List<Object> swapList = new ArrayList<Object>();
+        swapList.add("tanaka");
+        swapList.add("suzuki");
+        swapElements("tanaka", "suzuki", swapList);
+        swapList.forEach(s -> System.out.println(s));
+        // pg 10
+        LinkedList linkList1 = new LinkedList();
+        linkList1.add("waawawa");
+        LinkedList linkList2 = new LinkedList();
+        linkList2.add("bobobobobo");
+        LinkedList linkList3 = new LinkedList();
+        linkList3 = joined2LinkedList(linkList1, linkList2);
+        linkList3.forEach(s -> System.out.println(s));
+        
+    }
+        
+    public static int sumList(List<Integer> list) {
+        int i = 0;
+        for(int j: list) {
+            i += j;
+        }
+        return i;
+    }
+    public static List<Object> reverse(List<Object> objList) {
+//        Comparator cmp = Collections.reverseOrder();
+//        Collections.sort(objList, cmp);
+        Collections.reverse(objList);
+        return objList;
+    }
+    public static void swapElements(Object o1, Object o2, List<Object> list) {
+        int o1Index = list.indexOf(o1);
+        int o2Index = list.indexOf(o2);
+        
+        Object tempObj;
+        Object o1Obj  = list.get(o1Index);
+        Object o2Obj  = list.get(o2Index);
+        tempObj = o1Obj;
+        o1Obj = o2Obj;
+        o2Obj = tempObj;
+        list.set(o2Index, o2Obj);
+        list.set(o1Index, o1Obj);
+    }
+    public static LinkedList joined2LinkedList(LinkedList l1, LinkedList l2) {
+        LinkedList newList = new LinkedList();
+        newList.add(l1.element());
+        newList.add(l2.element());
+        return newList;
+    }
+}
