@@ -1,0 +1,91 @@
+-*10+5340
+
+*10+53-40
+(10+53)*-40
+
+ex12.4
+9
+3
+5
+2
+7
+4
+12.p pop
+
+14.1
+9
+4
+3
+5
+2
+8
+
+1.
+public class MyQueueLinkedList<E> extends LinkedList {
+    
+    public void enQueue(E e) {
+        add(e);
+    }
+    public E deQueue() {
+        E e = (E) getFirst();
+        remove(e);
+        return e;
+    }
+}
+
+2.
+public class MyStackArrayList<E> extends ArrayList<E>{
+    
+    private static final long serialVersionUID = 1L;
+    
+    public E pop() {
+        E e = get(size() - 1);
+        remove(size() - 1);
+        return e;
+    }
+
+    public void push(E e) {
+        add(e);
+    }
+}
+3.
+public class StackDemo {
+    public static void main(String[] args) {
+        MyQueueLinkedList<Integer> tempQueue = new MyQueueLinkedList<>();
+        tempQueue.enQueue(1);
+        tempQueue.enQueue(2);
+        tempQueue.enQueue(3);
+        
+        stutter(tempQueue);
+        
+        
+        MyQueueLinkedList<String> stringQueue = new MyQueueLinkedList<>();
+        stringQueue.enQueue("a");
+        stringQueue.enQueue("b");
+        stringQueue.enQueue("c");
+        
+        accepst(stringQueue);
+
+    }
+    public static void stutter(MyQueueLinkedList queue) {
+        queue.deQueue();
+        queue.deQueue();
+        queue.deQueue();
+        queue.enQueue(1);
+        queue.enQueue(1);
+        queue.enQueue(2);
+        queue.enQueue(2);
+        queue.enQueue(3);
+        queue.enQueue(3);
+        queue.display();
+    }
+    
+    public static void accepst(MyQueueLinkedList<String> queue)  {
+        queue.enQueue("c");
+        queue.enQueue("b");
+        queue.enQueue("a");
+        queue.display();    
+    }
+    
+}
+
