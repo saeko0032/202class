@@ -8,3 +8,6 @@ public static void main (String[] args) throws java.lang.Exception
  
 		}
 	}
+
+legal expression
+start with _,$,alphabet are only allowed to use for variable name
