@@ -1,0 +1,10 @@
+public static void main (String[] args) throws java.lang.Exception
+	{
+		int x =1, y= 10;
+		try {
+			y /= 10; // compile time error and don't go to catch statement
+		} catch(Exception e) {
+			System.out.println("error");
+ 
+		}
+	}
