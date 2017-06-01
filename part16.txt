@@ -1,0 +1,75 @@
+public class SetDemo {
+    public static void main(String[] args) {
+        SetDemo sd = new SetDemo();
+        //sd.demoHashSet();
+        //sd.demoLinkedHashSet();
+        sd.demoTreeSet();
+    }
+    public void demoHashSet(){
+        HashSet<String> hash = new HashSet<>();
+        // add
+        hash.add("test1");
+        hash.add("test2");
+        System.out.println(hash);
+        // remove
+        hash.remove("test1");
+        System.out.println(hash);
+        List<String> sList = new ArrayList<>();
+        sList.add("test3");
+        sList.add("test4");
+        hash.addAll(sList);
+        System.out.println(hash);
+        hash.removeAll(sList);
+        System.out.println(hash);
+        hash.addAll(sList);
+        hash.retainAll(sList);
+        System.out.println(hash);
+        if(hash.isEmpty()) { System.out.println("empty");}
+        System.out.println("size of hash is " + hash.size());
+
+    }
+    public void demoLinkedHashSet() {
+        HashSet<String> hash = new LinkedHashSet<>();
+        // add
+        hash.add("test1");
+        hash.add("test2");
+        System.out.println(hash);
+        // remove
+        hash.remove("test1");
+        System.out.println(hash);
+        List<String> sList = new ArrayList<>();
+        sList.add("test3");
+        sList.add("test4");
+        hash.addAll(sList);
+        System.out.println(hash);
+        hash.removeAll(sList);
+        System.out.println(hash);
+        hash.addAll(sList);
+        hash.retainAll(sList);
+        System.out.println(hash);
+        if(hash.isEmpty()) { System.out.println("empty");}
+        System.out.println("size of hash is " + hash.size());    
+    }
+    public void demoTreeSet() {
+        TreeSet<String> hash = new TreeSet<>();
+        // add
+        hash.add("test1");
+        hash.add("test2");
+        System.out.println(hash);
+        // remove
+        hash.remove("test1");
+        System.out.println(hash);
+        List<String> sList = new ArrayList<>();
+        sList.add("test3");
+        sList.add("test4");
+        hash.addAll(sList);
+        System.out.println(hash);
+        hash.removeAll(sList);
+        System.out.println(hash);
+        hash.addAll(sList);
+        hash.retainAll(sList);
+        System.out.println(hash);
+        if(hash.isEmpty()) { System.out.println("empty");}
+        System.out.println("size of hash is " + hash.size());    
+    }
+}
