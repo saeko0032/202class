@@ -1,0 +1,101 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package fileexcerise;
+
+/**
+ *
+ * @author CICCC-CIRAC
+ */
+public class Product {
+
+    private String code;
+    private int sales;
+
+    public Product(String code) {
+        this.code = code;
+    }
+    
+    public String getProductCode(){
+        sales+= 1;
+        return code;
+    }
+    @Override
+    public String toString(){
+        return "code : " + code + " sales : " + sales;
+    }
+}
+// need to modify/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package fileexcerise;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Function;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.stream.Stream;
+
+/**
+ *
+ * @author CICCC-CIRAC
+ */
+public class UseProduct {
+
+    public static void main(String[] args) {
+        Map<String, Integer> map = new TreeMap<>();
+        map.put("OB311", 0);
+        map.put("HR588", 0);
+        map.put("DX555", 0);
+        map.put("EW231", 0);
+        map.put("TT232", 0);
+        map.put("TJ991", 0);
+        map.put("GB637", 0);
+        map.put("BV693", 0);
+        map.put("CB239", 0);
+        map.put("NP466", 0);        
+        map.put("CB329", 0);  
+        map.put("EW231", 0);        
+        map.put("DX555", 0);  
+        map.put("VA838", 0);        
+        
+        Path filePath = Paths.get("C:\\Users\\CICCC-CIRAC\\Documents\\testdata\\mapFile.txt");
+        try {
+            AtomicInteger counter = new AtomicInteger(0);
+            
+            Files.lines(filePath)
+                    .map(s -> s.trim())
+                    .filter(s -> map.containsKey(s))
+                    .forEach(s -> map.put(s,counter.incrementAndGet()));
+                    //.forEach(s -> map.put(s, 0));
+        } catch (IOException ex) {
+            Logger.getLogger(FileStatistics.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Set set = map.entrySet();
+        Iterator iterator = set.iterator();
+        while(iterator.hasNext()) {
+            Map.Entry mentry = (Map.Entry)iterator.next();
+            System.out.println("key : " + mentry.getKey());
+            System.out.println("value : " + mentry.getValue());
+        }
+
+    }
+
+}
