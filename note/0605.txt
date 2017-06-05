@@ -1,0 +1,78 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pkg202class;
+
+import java.time.Duration;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+
+/**
+ *
+ * @author CICCC-CIRAC
+ */
+public class SearchingDemo {
+    public static void main(String[] args) {
+        SearchingDemo sd = new SearchingDemo();
+        List<Integer> ramdomIntList =  sd.generateRanDomNumList();
+        int seekNumber = 18;
+        Instant start = Instant.now();
+        Instant end = null;
+        for(int i = 0; i < ramdomIntList.size(); i ++) {
+            if(ramdomIntList.get(i) == seekNumber) {
+               // System.out.println("We found !"+ seekNumber + "where[" + i + "/100]");
+                end = Instant.now();
+            } else {
+                //System.out.print("not found");
+            }
+        }
+        System.out.println("ex1: " + Duration.between(start, end));
+        
+//        List<String> randomStringNumList = sd.generateRanDomStringList();
+//        String seekStrNumber = "22";
+//        for(int i = 0; i < ramdomIntList.size(); i ++) {
+//            if(ramdomIntList.get(i).equals(seekNumber)) {
+//                System.out.println("found !"+ seekNumber + "where[" + i + "/100]");
+//            }
+//        }        
+        
+        Object intArr[] = ramdomIntList.toArray();
+        Arrays.sort(intArr);
+      //  Arrays.asList(intArr).forEach(s -> System.out.println(s));
+        Instant start1 = Instant.now();       
+        int retVal = Arrays.binarySearch(intArr, 18);
+        Instant end1 = Instant.now();
+        System.out.println("ex4:" + Duration.between(start1, end1));
+        System.out.println("The index of element 6 is : " + retVal);
+    
+    }
+    public List<Integer> generateRanDomNumList() {
+        List<Integer> ramNumList = new ArrayList<>();
+        int i = 0;
+        do {
+            double randomDouble = Math.random();
+            int randomInt = (int) (100 * randomDouble);
+            ramNumList.add(randomInt);
+            i++;
+        } while (i < 1000000);
+        return ramNumList;
+    }
+    
+    public List<String> generateRanDomStringList() {
+        List<String> ramNumStrList = new ArrayList<>();
+        int i = 0;
+        do {
+            double randomDouble = Math.random();
+            int randomInt = (int) (1000 * randomDouble);
+            String ramdomStringInt = Integer.toString(randomInt);
+            ramNumStrList.add(ramdomStringInt);
+            i++;
+        } while (i < 100);
+        return ramNumStrList;
+    }
+    
+}

@@ -1,0 +1,30 @@
+public class SumOfTwoNums {
+
+    public static void main(String[] args) {
+        SumOfTwoNums sotn = new SumOfTwoNums();
+        int intArr[] = {10, 22, 28, 29, 30, 40};
+        sotn.printClosestSumNum(intArr, 54);
+    }
+
+    public void printClosestSumNum(int[] intArr, int maxNum) {
+        int startIndex = 0;
+        int endIndex = intArr.length - 1;
+        int retSIndex = 0;
+        int retEIndex = 0;
+        int diff = maxNum;
+
+        while (endIndex > startIndex) {
+            if (Math.abs(intArr[startIndex] + intArr[endIndex] - maxNum) < diff) {
+                retSIndex = startIndex;
+                retEIndex = endIndex;
+                diff = Math.abs(intArr[startIndex] + intArr[endIndex] - maxNum);
+            }
+            if (intArr[startIndex] + intArr[endIndex] > maxNum) {
+                endIndex -= 1;
+            } else {
+                startIndex += 1;
+            }
+        }
+        System.out.println("The closest pair for " + maxNum + " is " + intArr[retSIndex] + " and " + intArr[retEIndex]);
+    }
+}
