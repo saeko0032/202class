@@ -1,0 +1,124 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pkg202class;
+
+import java.time.Duration;
+import java.time.Instant;
+
+/**
+ *
+ * @author CICCC-CIRAC
+ */
+public class SortDemo {
+
+    public static void main(String[] args) {
+        // ex 1
+        int[] array = {45, 7, 42, 89, 99, 54, 23, 12, 93, 20};
+        SortDemo sd = new SortDemo();
+
+        // sd.bubbleSort(array);
+        // sd.selectionSort(array);
+        // sd.insertionSort(array);
+        // ex 2
+        int[] num = new int[1000];
+        for (int i = 0; i < 1000; i++) { 
+            // num[i] = (int) (Math.random()*1000); // random
+            // num[i] = 1000 - i; // worse
+            num[i] = i; // best
+        }
+        for (int s : num) {
+            System.out.println(s);
+        }
+        
+        Instant start = Instant.now();
+        // sd.bubbleSort(num);
+        sd.selectionSort(num);
+        // sd.insertionSort(num);
+        Instant end = Instant.now();
+        System.out.println(Duration.between(start, end));
+    }
+
+    public void bubbleSort(int[] array) {
+        int leftIndex = 0;
+        int rightIndex = array.length - 1;
+        int count1 = 0;
+        int count2 = 0;
+        while (leftIndex < rightIndex) {
+            if (array[leftIndex] > array[leftIndex + 1]) {
+                // swap two numbers
+                int tempNum = array[leftIndex];
+                array[leftIndex] = array[leftIndex + 1];
+                array[leftIndex + 1] = tempNum;
+                // 7,45,42
+                count1++;
+            } else {
+                count2++;
+            }
+            leftIndex += 1;
+            if (rightIndex == leftIndex) {
+                // when you finished swap, rightIndex should be the biggest Num
+                // so change rightIndex and swap it again
+                rightIndex -= 1;
+                leftIndex = 0;
+            }
+
+        }
+        System.out.println("exchange times : " + count1 + " copmare times:" + (count2 + count1));
+    }
+
+    public void selectionSort(int[] array) {
+        int leftIndex = 0;
+        int rightIndex = array.length - 1;
+        int seekIndex = 0;
+        int count1 = 0;
+        int count2 = 0;
+        while (leftIndex < rightIndex) {
+            if (array[leftIndex] > array[seekIndex]) {
+                // swap two numbers
+                int tempNum = array[leftIndex];
+                array[leftIndex] = array[seekIndex];
+                array[seekIndex] = tempNum;
+                count1++;
+            } else {
+                count2++;
+            }
+            seekIndex += 1;
+            if (seekIndex > rightIndex) {
+                // when you finished swap, leftIndex should be the smallest Num
+                // so change leftIndex and swap it again
+                leftIndex += 1;
+                seekIndex = leftIndex;
+            }
+        }
+        System.out.println("exchange times : " + count1 + " copmare times:" + (count2 + count1));
+
+    }
+
+    public void insertionSort(int[] array) {
+        int leftIndex = 0;
+        int endIndex = array.length;
+        int seekIndex = leftIndex + 1;
+        int count1 = 0;
+        int count2 = 0;
+        while (seekIndex < endIndex) {
+            while (leftIndex < seekIndex) {
+                if (array[seekIndex - 1] > array[seekIndex]) {
+                    // swap two numbers
+                    int tempNum = array[seekIndex - 1];
+                    array[seekIndex - 1] = array[seekIndex];
+                    array[seekIndex] = tempNum;
+                    seekIndex -= 1;
+                    count1++;
+                } else {
+                    count2++;
+                    break;
+                }
+            }
+            seekIndex += 1;
+        }
+        System.out.println("exchange times : " + count1 + " copmare times:" + (count2 + count1));
+    }
+}
