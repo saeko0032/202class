@@ -7,3 +7,19 @@ IF ALREADY SORTED -> once
 
 <selection sort>
 seek the smallest data and set it the first element
+
+<insertion sort>
+first element is 1, add 1 elemtns, and compare with last elements value, and if the result is
+between 1, b you can insert this value to. check from last element.
+affter adding 1 new element, the rest data is unsorted and inserted elements are sorted.
+
+less than bubble sort
+IF ALREADY SORTED:ONCE(n)
+
+
+Best case					Avg Case				Worst Case
+Time 		# Comparisons	# Exchanges	Time 	# Comparisons	# Exchanges	Time 	# Comparisons	# Exchanges
+bubble sort	0.004		499500		0.005	499500		247528		0.006	499500		499500
+Selection sort	0.004		500499		0.006	500499		178616		0.007	500499		499500
+Insertion sort	0.001		999		0.005	517124		258064		0.006	999000		499500
+
