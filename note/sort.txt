@@ -1,0 +1,9 @@
+<bubble sort>
+expensive sort -> you can exchange two values for the langth,
+when you finished sort, the last one shoud be the biggest number,
+you can reduce 1 length, and exchange again....
+
+IF ALREADY SORTED -> once
+
+<selection sort>
+seek the smallest data and set it the first element
