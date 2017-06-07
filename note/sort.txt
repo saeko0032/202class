@@ -18,8 +18,17 @@ IF ALREADY SORTED:ONCE(n)
 
 
 Best case					Avg Case				Worst Case
-Time 		# Comparisons	# Exchanges	Time 	# Comparisons	# Exchanges	Time 	# Comparisons	# Exchanges
-bubble sort	0.004		499500		0.005	499500		247528		0.006	499500		499500
-Selection sort	0.004		500499		0.006	500499		178616		0.007	500499		499500
-Insertion sort	0.001		999		0.005	517124		258064		0.006	999000		499500
+		Time 		# Comparisons	# Exchanges	Time 	# Comparisons	# Exchanges	Time 	# Comparisons	# Exchanges
+bubble sort	0.004		499500		0		0.005	499500		247528		0.006	499500		499500
+Selection sort	0.004		499500		0		0.006	499500		178616		0.007	499500		499500
+Insertion sort	0.001		999		0		0.005	517124		258064		0.006	999000		499500
 
+merge sort 
+divide data by2, and when it merge search min value and set it.
+
+quick sort
+selectt one number and divide two groups by using selected numbers.
+one number should be a standard number.smaller or bigger.
+in this group choose one number again and divide it.
+
+pivot
