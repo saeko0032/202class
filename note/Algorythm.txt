@@ -1,0 +1,15 @@
+what's the performance of solutions?
+which is the best solutions??
+
+1. Time
+2. Space(Memory)
+
+1.Time
+how much input we try to use?
+what the size of input?
+
+best O???
+ave T???
+worst o (big o)
+
+=>Do not assume n will always be small
