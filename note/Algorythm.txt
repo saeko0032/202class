@@ -13,3 +13,28 @@ ave T???
 worst o (big o)
 
 =>Do not assume n will always be small
+
+11.1 
+a. n2
+b. n3
+c. n3
+d. logn
+
+1. 0.001ne O(n3)
+2. 100n1.5 O(n1.5)
+3. 2.5n1.75 O(n1.75)
+4. n2log2n O(n2logn)
+5. nlog3n, O(nlog2n n log n)
+6. 3log2n O(log n)
+7. 0.01n2 O(n2)
+8. 100n2 O(n2)
+9. 0.5n1.25 O(n1.25)
+10.n(log2)n O(n(log n)2)
+11.n3 O(n3)
+12. 0.003log4n O(logn)
+
+1. O(n4)
+1. O(n2)
+2. O(3n)
+3. O(mn)
+4. O(9logn)
